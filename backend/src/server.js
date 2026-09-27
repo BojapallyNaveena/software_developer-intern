@@ -57,3 +57,5 @@ server.listen(PORT, () => {
   console.log(`📡 Socket.io ready for real-time connections`);
   console.log(`=================================`);
 });
+
+module.exports = app;
