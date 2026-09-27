@@ -1,13 +1,23 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const fs = require('fs');
+const os = require('os');
 
-const dbDir = path.join(__dirname, '../db');
-if (!fs.existsSync(dbDir)) {
-  fs.mkdirSync(dbDir, { recursive: true });
+let dbPath;
+
+try {
+  let dbDir = path.join(__dirname, '../db');
+  if (process.env.VERCEL || process.env.NODE_ENV === 'production') {
+    dbDir = os.tmpdir();
+  } else if (!fs.existsSync(dbDir)) {
+    fs.mkdirSync(dbDir, { recursive: true });
+  }
+  dbPath = path.join(dbDir, 'chat.db');
+} catch (e) {
+  console.warn('Fallback to OS temp directory due to read-only filesystem:', e.message);
+  dbPath = path.join(os.tmpdir(), 'chat.db');
 }
 
-const dbPath = path.join(dbDir, 'chat.db');
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error('Error opening SQLite database:', err.message);
