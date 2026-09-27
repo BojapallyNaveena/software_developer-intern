@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PulseChat - Real-Time Chat Application
 
 A high-performance, real-time full-stack chat application built with **React**, **Node.js**, **Express**, **Socket.io**, and **SQLite**.
@@ -250,3 +251,6 @@ software developer/
 3. Set Build Command: `npm run build`
 4. Set Publish Directory: `dist`
 5. Set Environment Variable `VITE_BACKEND_URL=https://your-backend.onrender.com`.
+=======
+# software_developer-intern
+>>>>>>> 162d05c0d4fd117341d715a208ddacf25120b161
