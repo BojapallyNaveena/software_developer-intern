@@ -1,0 +1,26 @@
+{
+  "name": "chat-backend",
+  "version": "1.0.0",
+  "description": "Real-time Chat Application Backend with Node.js, Express, Socket.io, and SQLite",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "real-time",
+    "chat",
+    "socket.io",
+    "express",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5",
+    "sqlite3": "^5.1.7"
+  }
+}

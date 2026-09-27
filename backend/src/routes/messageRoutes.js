@@ -1,0 +1,8 @@
+const express = require('express');
+const router = express.Router();
+const { getChatHistory, sendMessage } = require('../controllers/messageController');
+
+router.get('/', getChatHistory);
+router.post('/', sendMessage);
+
+module.exports = router;
